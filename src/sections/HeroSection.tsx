@@ -1,0 +1,90 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+import ContactButton from '../components/ContactButton'
+import Magnet from '../components/Magnet'
+
+const fadeIn = (delay: number, y = 0, x = 0) => ({
+  initial: { opacity: 0, y, x },
+  animate: { opacity: 1, y: 0, x: 0 },
+  transition: { duration: 0.7, delay, ease: [0.25, 0.1, 0.25, 1] as const },
+})
+
+const HeroSection: React.FC = () => {
+  return (
+    <section
+      className="h-screen flex flex-col relative"
+      style={{ overflowX: 'clip', background: '#0C0C0C' }}
+    >
+      {/* Navbar */}
+      <motion.nav
+        {...fadeIn(0, -20)}
+        className="flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8"
+      >
+        {['About', 'Services', 'Projects', 'Contact'].map((link) => (
+          <a
+            key={link}
+            href={`#${link.toLowerCase()}`}
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById(link.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="text-[#D7E2EA] font-medium uppercase tracking-wider
+              text-sm md:text-lg lg:text-[1.4rem]
+              transition-opacity duration-200 hover:opacity-70 cursor-pointer"
+          >
+            {link}
+          </a>
+        ))}
+      </motion.nav>
+
+      {/* Hero Heading */}
+      <div className="overflow-hidden">
+        <motion.h1
+          {...fadeIn(0.15, 40)}
+          className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full
+            text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]
+            mt-6 sm:mt-4 md:-mt-5"
+        >
+          i&apos;m stephen
+        </motion.h1>
+      </div>
+
+      {/* Portrait — centered absolutely */}
+      <motion.div
+        {...fadeIn(0.6, 30)}
+        className="absolute left-1/2 -translate-x-1/2 z-10
+          top-[38%] -translate-y-1/2
+          sm:top-auto sm:translate-y-0 sm:bottom-[8%]"
+      >
+        <Magnet padding={150} strength={3} activeTransition="transform 0.3s ease-out" inactiveTransition="transform 0.6s ease-in-out">
+          <img
+            src="IMG_removebg.png"
+            alt="Jack portrait"
+            className="w-[180px] sm:w-[220px] md:w-[280px] lg:w-[340px] object-contain"
+            draggable={false}
+          />
+        </Magnet>
+      </motion.div>
+
+      {/* Bottom bar */}
+      <div className="mt-auto flex justify-between items-end px-6 md:px-10 pb-7 sm:pb-8 md:pb-10">
+        {/* Left text */}
+        <motion.p
+          {...fadeIn(0.35, 20)}
+          className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug
+            max-w-[160px] sm:max-w-[220px] md:max-w-[350px] lg:max-w-none lg:whitespace-nowrap"
+          style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
+        >
+          Code. Connect. Create. — Full Stack with AI.
+        </motion.p>
+
+        {/* Contact button */}
+        <motion.div {...fadeIn(0.5, 20)}>
+          <ContactButton />
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+export default HeroSection
