@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 const ALL_MEDIA = [
-  '/11.MOV',
-  '/22.MOV',
-  '/33.MOV',
-  '/44.MOV',
-  '/55.MOV',
-  '/66.MOV',
+  '/11_compressed.mp4',
+  '/22_compressed.mp4',
+  '/33_compressed.mp4',
+  '/44_compressed.mp4',
+  '/55_compressed.mp4',
+  '/66_compressed.mp4',
 ]
 
 const ROW1 = ALL_MEDIA.slice(0, 3)
@@ -25,6 +25,7 @@ const MediaTile: React.FC<{ src: string }> = ({ src }) => {
         muted
         loop
         playsInline
+        preload="metadata"
         className="rounded-2xl object-contain flex-shrink-0 w-[280px] sm:w-[340px] md:w-[420px] h-[180px] sm:h-[220px] md:h-[270px]"
       />
     )
