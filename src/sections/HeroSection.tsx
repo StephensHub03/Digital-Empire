@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
       {/* Navbar */}
       <motion.nav
         {...fadeIn(0, -20)}
-        className="flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8"
+        className="flex justify-between items-center px-4 sm:px-6 md:px-10 pt-6 md:pt-8 gap-2"
       >
         {['About', 'Services', 'Projects', 'Contact'].map((link) => (
           <a
@@ -28,8 +28,9 @@ const HeroSection: React.FC = () => {
               document.getElementById(link.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })
             }}
             className="text-[#D7E2EA] font-medium uppercase tracking-wider
-              text-sm md:text-lg lg:text-[1.4rem]
-              transition-opacity duration-200 hover:opacity-70 cursor-pointer"
+              text-[0.65rem] sm:text-sm md:text-lg lg:text-[1.4rem]
+              transition-opacity duration-200 hover:opacity-70 cursor-pointer
+              py-2 px-1 sm:px-2"
           >
             {link}
           </a>
@@ -52,26 +53,26 @@ const HeroSection: React.FC = () => {
       <motion.div
         {...fadeIn(0.6, 30)}
         className="absolute left-1/2 -translate-x-1/2 z-10
-          top-[38%] -translate-y-1/2
+          top-[40%] -translate-y-1/2
           sm:top-auto sm:translate-y-0 sm:bottom-[8%]"
       >
         <Magnet padding={150} strength={3} activeTransition="transform 0.3s ease-out" inactiveTransition="transform 0.6s ease-in-out">
           <img
             src="IMG_removebg.png"
             alt="Jack portrait"
-            className="w-[180px] sm:w-[220px] md:w-[280px] lg:w-[340px] object-contain"
+            className="w-[160px] sm:w-[220px] md:w-[280px] lg:w-[340px] object-contain"
             draggable={false}
           />
         </Magnet>
       </motion.div>
 
       {/* Bottom bar */}
-      <div className="mt-auto flex justify-between items-end px-6 md:px-10 pb-7 sm:pb-8 md:pb-10">
+      <div className="mt-auto flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 px-4 sm:px-6 md:px-10 pb-7 sm:pb-8 md:pb-10">
         {/* Left text */}
         <motion.p
           {...fadeIn(0.35, 20)}
           className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug
-            max-w-[160px] sm:max-w-[220px] md:max-w-[350px] lg:max-w-none lg:whitespace-nowrap"
+            max-w-[140px] sm:max-w-[220px] md:max-w-[350px] lg:max-w-none lg:whitespace-nowrap"
           style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
         >
           Code. Connect. Create. — Full Stack with AI.

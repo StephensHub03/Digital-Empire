@@ -106,9 +106,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         {/* Image grid */}
-        <div className="flex gap-3 sm:gap-4 h-[calc(100%-100px)]">
+        <div className="flex gap-2 sm:gap-3 md:gap-4 h-[calc(100%-80px)] sm:h-[calc(100%-100px)]">
           {/* Left column — 40% */}
-          <div className="flex flex-col gap-3 sm:gap-4" style={{ width: '40%' }}>
+          <div className="flex flex-col gap-2 sm:gap-3 md:gap-4" style={{ width: '40%' }}>
             <img
               src={project.col1img1}
               alt={`${project.name} preview 1`}
