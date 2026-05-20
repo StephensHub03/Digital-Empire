@@ -9,33 +9,27 @@ const PROJECTS = [
     category: 'API',
     name: 'Movie Hub',
     url: 'https://netflix-clone-omega-six-62.vercel.app/',
-    col1img1: '/project1.png',
-    col1img2: '/project2.png',
-    col2img: '/project3.jpeg',
+    col1img1: '/project1.webp',
+    col1img2: '/project2.webp',
+    col2img: '/project3.webp',
   },
   {
     num: '02',
     category: 'Frontend',
     name: 'Udemy Clone',
     url: 'https://stephenshub03.github.io/udemy_clone/',
-    col1img1:
-      '/proimg1.png',
-    col1img2:
-      '/proimg2.png',
-    col2img:
-      '/proimg3.png',
+    col1img1: '/proimg1.webp',
+    col1img2: '/proimg2.webp',
+    col2img: '/proimg3.webp',
   },
   {
     num: '03',
     category: 'Automation',
     name: 'Certificate Generator',
     url: 'https://certificate-generator-mu-coral.vercel.app',
-    col1img1:
-      '/cer2.png',
-    col1img2:
-      '/cer3.png',
-    col2img:
-      '/cer1.png',
+    col1img1: '/cer2.webp',
+    col1img2: '/cer3.webp',
+    col2img: '/cer1.webp',
   },
 ]
 

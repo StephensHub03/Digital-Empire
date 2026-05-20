@@ -65,7 +65,7 @@ const AboutSection: React.FC = () => {
         </FadeIn>
 
         {/* Text + button */}
-        <div className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
+        <div className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24 relative">
           <AnimatedText
             text={ABOUT_TEXT}
             className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px]"
